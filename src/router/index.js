@@ -1,7 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
+import Recitation from "../views/Recitation.vue";
 
 const routes = [
+  {
+    path: "/recitation",
+    name: "Recitation",
+    component: Recitation,
+  },
   {
     path: "/",
     name: "Home",

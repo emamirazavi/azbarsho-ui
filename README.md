@@ -33,3 +33,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - see this address https://everyayah.com/
 
 ### hefze kalamat
+
+### vue tips
+
+ - https://vue-i18n.intlify.dev/guide/essentials/scope.html#local-scope-1

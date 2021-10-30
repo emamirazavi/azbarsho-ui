@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/recitation">Recitation</router-link>
   </div>
   <router-view />
 </template>
@@ -28,3 +29,27 @@
   color: #42b983;
 }
 </style>
+
+<script>
+// import { defineComponent } from '@vue/composition-api'
+// import VueCookie from 'vue-cookie';
+export default ({
+  data(){
+    
+  },
+  beforeMount() {
+    let locale = this.$cookies.get('locale') || 'fa';
+    if (locale === 'ar' || locale === 'fa') {
+      document.querySelector('html').setAttribute('dir','rtl');
+    }
+  },
+  setup() {
+    
+    // alert('salam');
+    // let locale = this.$cookies.get('locale') || 'fa';
+    // if (locale === 'ar' || locale === 'fa') {
+    //   document.querySelector('html').setAttribute('dir','rtl');
+    // }
+  },
+})
+</script>
