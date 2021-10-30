@@ -1,16 +1,24 @@
 <!-- https://bootstrap-vue.org/docs/components/form-select -->
 <template>
   <div class="recitation">
-    {{$root.locale}}
+    <!-- {{$root.$i18n.locale}} -->
     <LocaleChanger/>
-  <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+  <b-form @submit="onSubmit" @reset="onReset" v-if="show" :key="$root.$i18n.locale">
+    
       <b-form-group
         id="input-group-1"
         label="Reciter:"
         label-for="input-1"
         description=""
       >
-        <b-form-select v-model="selected" :options="options"></b-form-select>
+        <b-form-select v-model="selected" :options="[
+          { value: '0', text: this.$t('message.RECITER_PARHIZGAR') },
+          { value: '1', text: this.$t('message.RECITER_SHATRI') },
+          { value: '2', text: this.$t('message.RECITER_AFASY') },
+          { value: '3', text: this.$t('message.RECITER_GHAMDI') }
+        ]">
+
+        </b-form-select>
       </b-form-group>
 
     </b-form>
@@ -45,6 +53,12 @@ export default {
     //   document.querySelector('html').setAttribute('dir','rtl');
     // }
   },
+  computed: {
+    // salamBarEbrahim: function(){
+    //   // return this.$t("message.RECITER_PARHIZGAR");
+    //   return 'akbar';
+    // }
+  },
   data() {
       return {
         form: {
@@ -53,15 +67,9 @@ export default {
           food: null,
           checked: []
         },
-        foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
+        // foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
         show: true,
-        selected: 0,
-        options: [
-          { value: '0', text: this.$t("message.RECITER_PARHIZGAR") },
-          { value: '1', text: 'شاطری' },
-          { value: '2', text: 'العفاسی' },
-          { value: '3', text: 'سعد الغامدی' }
-        ]
+        selected: 0
       }
     },
 };

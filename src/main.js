@@ -17,19 +17,25 @@ const messages = {
     en: {
       message: {
         hello: 'hello world',
-        RECITER_PARHIZGAR: 'Parhizgar',
+        RECITER_PARHIZGAR: 'Shahriar Parhizgar',
+        RECITER_SHATRI: 'Abu Bakr Al Shatri',
+        RECITER_AFASY: 'Mishary Rashid Alafasy',
+        RECITER_GHAMDI: 'Saad El Ghamidi',
       }
     },
     ja: {
       message: {
         hello: 'こんにちは、世界', 
-        RECITER_PARHIZGAR: 'پرهیزگار',
+        // RECITER_PARHIZGAR: 'پرهیزگار',
       }
     },
     fa: {
         message: {
-          hello: 'سلام', 
-          RECITER_PARHIZGAR: 'پرهیزگار',
+          hello: 'سلام',
+          RECITER_PARHIZGAR: 'شهریار پرهیزگار',
+          RECITER_SHATRI: 'ابوبکر الشاطری',
+          RECITER_AFASY: 'میشاری رشید العفاسی',
+          RECITER_GHAMDI: 'سعد الغامدی',
         }
       }
   }

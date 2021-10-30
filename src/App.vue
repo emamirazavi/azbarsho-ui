@@ -38,6 +38,7 @@ export default ({
     
   },
   beforeMount() {
+    // this.$root.$i18n.locale
     let locale = this.$cookies.get('locale') || 'fa';
     if (locale === 'ar' || locale === 'fa') {
       document.querySelector('html').setAttribute('dir','rtl');
