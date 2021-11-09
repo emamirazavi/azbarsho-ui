@@ -1,10 +1,13 @@
 <template>
   <div class="locale-changer" style="float:right">
-    <select v-model="$i18n.locale" v-on:change="localeChanged()">
-      <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
-    </select>
-    <!-- <font-awesome-icon :icon="['fas', 'language']" /> -->
-    <font-awesome-icon icon="language" size="2x" />
+    
+ <b-dropdown size="lg"  variant="link" toggle-class="text-decoration-none" no-caret v-model="$i18n.locale" v-on:change="localeChanged()">
+    <template #button-content>
+      <font-awesome-icon icon="language" size="2x" viewBox="0 0 640 305" onclick="document.getElementById('shastepa').triggerEvent('click')"/>
+    </template>
+    <b-dropdown-item href="#" :key="`locale-${locale}`" v-for="locale in $i18n.availableLocales" v-on:click="localeChanged(locale)">{{ locale }}</b-dropdown-item>
+  </b-dropdown>
+
   </div>
 </template>
 
@@ -15,10 +18,12 @@ export default {
   //   return { langs: ['ja', 'en', 'fa'] }
   // },
   methods: {
-    localeChanged(){
-      this.$cookies.set('locale',this.$root.$i18n.locale);
+    localeChanged(localeSTR){
+    this.$cookies.set('locale',localeSTR);
+      this.$root.$i18n.locale = localeSTR;
+
       let locale = this.$root.$i18n.locale;
-      if (locale === 'ar' || locale === 'fa') {
+      if (locale === 'Persian') {
         document.querySelector('html').setAttribute('dir','rtl');
       } else {
         document.querySelector('html').setAttribute('dir','ltr');
