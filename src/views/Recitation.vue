@@ -2,7 +2,7 @@
 <template>
   <div class="recitation">
     <!-- {{$root.$i18n.locale}} -->
-    <LocaleChanger/>
+    
   <b-form @submit="onSubmit" @reset="onReset" v-if="show" :key="$root.$i18n.locale">
     
       <b-form-group
@@ -31,13 +31,13 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
-import LocaleChanger from "@/components/LocaleChanger.vue";
+
 // import Vue from "vue";
 export default {
   name: "Home",
   components: {
     // HelloWorld,
-    LocaleChanger,
+    // LocaleChanger,
   },
   setup() {
     // let locale = this.$cookies.get('locale') || 'fa';

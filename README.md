@@ -38,6 +38,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
  - https://vue-i18n.intlify.dev/guide/essentials/scope.html#local-scope-1
  - https://vuejs.org/v2/cookbook/debugging-in-vscode.html
+ - https://github.com/FortAwesome/vue-fontawesome
 
 #### launch.json sample to debug
 

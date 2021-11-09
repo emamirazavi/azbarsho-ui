@@ -1,6 +1,16 @@
 import { createApp } from "vue";
+// import Vue from 'vue'
 import BootstrapVue3 from 'bootstrap-vue-3';
 import { createI18n } from "vue-i18n";
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUserSecret, faLanguage } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faUserSecret, faLanguage)
+
+
+
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css';
@@ -14,7 +24,7 @@ import router from "./router";
 import store from "./store";
 
 const messages = {
-    en: {
+    'English': {
       message: {
         hello: 'hello world',
         RECITER_PARHIZGAR: 'Shahriar Parhizgar',
@@ -23,13 +33,13 @@ const messages = {
         RECITER_GHAMDI: 'Saad El Ghamidi',
       }
     },
-    ja: {
+    'Japanise': {
       message: {
         hello: 'こんにちは、世界', 
         // RECITER_PARHIZGAR: 'پرهیزگار',
       }
     },
-    fa: {
+    'Persian': {
         message: {
           hello: 'سلام',
           RECITER_PARHIZGAR: 'شهریار پرهیزگار',
@@ -51,7 +61,7 @@ const messages = {
 
 let app = createApp(App);
 app.use(store).use(router).use(BootstrapVue3).use(i18n);
-
+app.component('font-awesome-icon', FontAwesomeIcon);
 // Or to set default config:
 app.use(VueCookies, {
     expireTimes: "30d",

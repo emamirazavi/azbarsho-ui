@@ -1,8 +1,11 @@
 <template>
   <div id="nav">
+    
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/recitation">Recitation</router-link>
+    <LocaleChanger/>
+
   </div>
   <router-view />
 </template>
@@ -31,6 +34,9 @@
 </style>
 
 <script>
+// import MenuIcon from 'vue-material-design-icons/Menu.vue';
+// Vue.component('menu-icon', MenuIcon);
+import LocaleChanger from "@/components/LocaleChanger.vue";
 // import { defineComponent } from '@vue/composition-api'
 // import VueCookie from 'vue-cookie';
 export default ({
@@ -54,5 +60,8 @@ export default ({
     //   document.querySelector('html').setAttribute('dir','rtl');
     // }
   },
+  components: {
+    LocaleChanger,
+  }
 })
 </script>
