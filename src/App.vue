@@ -1,9 +1,9 @@
 <template>
   <div id="nav">
     
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/recitation">Recitation</router-link>
+    <router-link to="/">{{ this.$t('message.menu.home') }}</router-link> |
+    <router-link to="/about">{{ this.$t('message.menu.about') }}</router-link> |
+    <router-link to="/recitation">{{ this.$t('message.menu.recitation') }}</router-link>
     <LocaleChanger/>
 
   </div>

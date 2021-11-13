@@ -31,12 +31,28 @@ const messages = {
         RECITER_SHATRI: 'Abu Bakr Al Shatri',
         RECITER_AFASY: 'Mishary Rashid Alafasy',
         RECITER_GHAMDI: 'Saad El Ghamidi',
+        menu: {
+          home: 'Home',
+          about: 'About',
+          recitation: 'Recitation',
+        },
+        recitation: {
+          reciter : 'Reciter',
+        }
       }
     },
     'Japanise': {
       message: {
         hello: 'こんにちは、世界', 
         // RECITER_PARHIZGAR: 'پرهیزگار',
+        menu: {
+          home: '家',
+          about: 'だいたい',
+          recitation: '朗読',
+        },
+        recitation: {
+          reciter : 'Reciter',
+        }
       }
     },
     'Persian': {
@@ -46,6 +62,14 @@ const messages = {
           RECITER_SHATRI: 'ابوبکر الشاطری',
           RECITER_AFASY: 'میشاری رشید العفاسی',
           RECITER_GHAMDI: 'سعد الغامدی',
+          menu: {
+            home: 'خانه',
+            about: 'درباره',
+            recitation: 'حفظ',
+          },
+          recitation: {
+            reciter : 'قاری',
+          }
         }
       }
   }

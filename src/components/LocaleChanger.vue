@@ -2,7 +2,7 @@
   <div class="locale-changer" style="float:right">
  <b-dropdown size="sm" variant="link" toggle-class="text-decoration-none" no-caret v-model="$i18n.locale" v-on:change="localeChanged()">
     <template #button-content>
-      <font-awesome-icon icon="language" size="2x" viewBox="150 100 350 350" onclick="document.getElementById('shastepa').triggerEvent('click')"/>
+      <font-awesome-icon icon="language" size="x" viewBox="150 100 350 350" onclick="document.getElementById('shastepa').triggerEvent('click')"/>
     </template>
     <b-dropdown-item href="#" :key="`locale-${locale}`" v-for="locale in $i18n.availableLocales" v-on:click="localeChanged(locale)">{{ locale }}</b-dropdown-item>
   </b-dropdown>
@@ -14,6 +14,10 @@
 /* .dropdown-toggle { */
 .locale-changer button{
   padding: 0 !important;
+  /* border: 0 !important;
+   outline: 0 !important; */
+   -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 </style>
 
