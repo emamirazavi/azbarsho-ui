@@ -11,6 +11,7 @@
         label-for="input-1"
         description=""
       >
+        <!-- <b-form-select v-model="selected" :options="[ -->
         <b-form-select v-model="selected" :options="[
           { value: '0', text: this.$t('message.RECITER_PARHIZGAR') },
           { value: '1', text: this.$t('message.RECITER_SHATRI') },
@@ -21,10 +22,27 @@
         </b-form-select>
       </b-form-group>
 
+      <b-form-group
+        id="input-group-2"
+        v-bind:label="this.$t('message.recitation.chapter')"
+        label-for="input-2"
+        description=""
+      >
+        <b-form-select :value="1">
+            <option v-bind:value="i" v-for="i of [...Array(115).keys()].slice(1)" :key="i">{{this.$t('message.chapters.c'+i)}}</option>
+        </b-form-select>
+      </b-form-group>
+
+      <b-form-group
+        id="input-group-3"
+        v-bind:label="this.$t('message.recitation.aya')"
+        label-for="input-3"
+        description=""
+      >
+      <b-form-input v-model="aya" min=1 type="number"></b-form-input>
+      </b-form-group>
+
     </b-form>
-    <!-- <b-card class="mt-3" header="Form Data Result">
-      <pre class="m-0">{{ form }}</pre>
-    </b-card> -->
   </div>
 </template>
 
@@ -40,37 +58,19 @@ export default {
     // LocaleChanger,
   },
   setup() {
-    // let locale = this.$cookies.get('locale') || 'fa';
-// alert(locale);
-// if (locale === 'ar' || locale === 'fa') {
-//     document.querySelector('html').setAttribute('dir','rtl');
-// }
-
-
-    // alert('salam');
-    // let locale = this.$cookies.get('locale') || 'fa';
-    // if (locale === 'ar' || locale === 'fa') {
-    //   document.querySelector('html').setAttribute('dir','rtl');
-    // }
+    
   },
   computed: {
-    // salamBarEbrahim: function(){
-    //   // return this.$t("message.RECITER_PARHIZGAR");
-    //   return 'akbar';
-    // }
+    
   },
   data() {
       return {
-        form: {
-          email: '',
-          name: '',
-          food: null,
-          checked: []
-        },
-        // foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
+        aya: 1,
         show: true,
-        selected: 0
       }
     },
+  methods: {
+    
+  }
 };
 </script>
