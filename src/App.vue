@@ -1,11 +1,11 @@
 <template>
   <div id="nav">
-    
-    <router-link to="/">{{ this.$t('message.menu.home') }}</router-link> |
-    <router-link to="/about">{{ this.$t('message.menu.about') }}</router-link> |
-    <router-link to="/recitation">{{ this.$t('message.menu.recitation') }}</router-link>
-    <LocaleChanger/>
-
+    <router-link to="/">{{ this.$t("message.menu.home") }}</router-link> |
+    <router-link to="/about">{{ this.$t("message.menu.about") }}</router-link> |
+    <router-link to="/recitation">{{
+      this.$t("message.menu.recitation")
+    }}</router-link>
+    <LocaleChanger ref="localeChanger"/>
   </div>
   <router-view />
 </template>
@@ -39,29 +39,19 @@
 import LocaleChanger from "@/components/LocaleChanger.vue";
 // import { defineComponent } from '@vue/composition-api'
 // import VueCookie from 'vue-cookie';
-export default ({
-  data(){
-    
+export default {
+  data() {},
+  components: {
+    LocaleChanger,
   },
   beforeMount() {
-    // this.$root.$i18n.locale
-    // this.$root.$i18n.global.locale = this.$cookies.get('locale') || 'fa';
-    this.$i18n.locale = this.$cookies.get('locale') || 'fa';
-    let locale = this.$root.$i18n.locale;
-    if (locale === 'ar' || locale === 'fa') {
-      document.querySelector('html').setAttribute('dir','rtl');
-    }
+    this.$i18n.locale = this.$cookies.get("locale") || "Persian";
+  },
+  mounted() {
+    this.$refs.localeChanger.localeChanged(this.$root.$i18n.locale);
   },
   setup() {
     
-    // alert('salam');
-    // let locale = this.$cookies.get('locale') || 'fa';
-    // if (locale === 'ar' || locale === 'fa') {
-    //   document.querySelector('html').setAttribute('dir','rtl');
-    // }
   },
-  components: {
-    LocaleChanger,
-  }
-})
+};
 </script>

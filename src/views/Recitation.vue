@@ -12,11 +12,11 @@
         description=""
       >
         <!-- <b-form-select v-model="selected" :options="[ -->
-        <b-form-select v-model="selected" :options="[
-          { value: '0', text: this.$t('message.RECITER_PARHIZGAR') },
-          { value: '1', text: this.$t('message.RECITER_SHATRI') },
-          { value: '2', text: this.$t('message.RECITER_AFASY') },
-          { value: '3', text: this.$t('message.RECITER_GHAMDI') }
+        <b-form-select v-model="reciter" :options="[
+          { value: 'PARHIZGAR', text: this.$t('message.RECITER_PARHIZGAR') },
+          { value: 'SHATRI', text: this.$t('message.RECITER_SHATRI') },
+          { value: 'AFASY', text: this.$t('message.RECITER_AFASY') },
+          { value: 'GHAMDI', text: this.$t('message.RECITER_GHAMDI') }
         ]">
 
         </b-form-select>
@@ -28,7 +28,7 @@
         label-for="input-2"
         description=""
       >
-        <b-form-select :value="1">
+        <b-form-select v-model="chapter">
             <option v-bind:value="i" v-for="i of [...Array(115).keys()].slice(1)" :key="i">{{this.$t('message.chapters.c'+i)}}</option>
         </b-form-select>
       </b-form-group>
@@ -65,6 +65,8 @@ export default {
   },
   data() {
       return {
+        reciter: 'PARHIZGAR',
+        chapter: 1,
         aya: 1,
         show: true,
       }
